@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/robot_cleaner_node.dir/src/robot_cleaner.cpp.o  -o /home/ibrncfe/manipulator_ws/devel/lib/aeriaman/robot_cleaner_node 

@@ -1,0 +1,15 @@
+<launch>
+<!-- values passed by command line input --> 
+<arg name="man" />
+<arg name="gui" default="False" />
+<!-- set these parameters on Parameter Server --> 
+<param name="robot_description" command="$(find xacro)/xacro.py
+'$(find aeriaman)/urdf/man.xacro'" />
+
+<!-- send joint values from gui -->
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"> <param name="use_gui" value="TRUE"/> </node>
+
+<!-- use joint positions to update tf -->
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+<!-- visualize robot model in 3D --> <node name="rviz" pkg="rviz" type="rviz"
+args="-d $(find aeriaman)/urdf.rviz" required="true" /> </launch>

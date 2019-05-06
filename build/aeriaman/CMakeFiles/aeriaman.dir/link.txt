@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/aeriaman.dir/src/robot_cleaner.cpp.o  -o /home/ibrncfe/manipulator_ws/devel/lib/aeriaman/aeriaman 
