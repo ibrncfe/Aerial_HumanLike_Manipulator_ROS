@@ -1,0 +1,8 @@
+prefix=/home/ibrncfe/manipulator_ws/devel
+
+Name: pr2_mechanism_diagnostics
+Description: Description of pr2_mechanism_diagnostics
+Version: 1.8.18
+Cflags: 
+Libs: -L/home/ibrncfe/manipulator_ws/devel/lib 
+Requires: 

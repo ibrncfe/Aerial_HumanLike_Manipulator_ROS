@@ -60,7 +60,7 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        All Links Enabled: true
+        All Links Enabled: false
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -79,8 +79,13 @@ Visualization Manager:
           Alpha: 1
           Show Axes: true
           Show Trail: true
-          Value: true
+          Value: false
         forearm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hand_1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -128,25 +133,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.784414291381836
+      Distance: 10.07365894317627
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.469813734292984
+        Y: 0.43894162774086
+        Z: 0.4994121491909027
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7803981900215149
+      Pitch: 0.10539736598730087
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.214595079421997
+      Yaw: 4.491456985473633
     Saved: ~
 Window Geometry:
   Displays:
@@ -164,5 +169,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1389
-  X: -150
-  Y: 291
+  X: 400
+  Y: 27

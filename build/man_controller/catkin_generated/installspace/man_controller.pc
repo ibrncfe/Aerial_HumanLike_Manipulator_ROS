@@ -1,0 +1,8 @@
+prefix=/home/ibrncfe/manipulator_ws/install
+
+Name: man_controller
+Description: Description of man_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ibrncfe/manipulator_ws/install/lib 
+Requires: 

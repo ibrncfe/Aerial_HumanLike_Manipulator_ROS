@@ -1,0 +1,21 @@
+<package>
+  <description brief="my_controller_pkg">
+
+     my_controller_pkg
+
+  </description>
+  <author>Ibrahim N Ibrahim</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/my_controller_pkg</url>
+  <depend package="pr2_controller_interface"/>
+  <depend package="pr2_mechanism_model"/>
+  <depend package="pluginlib"/>
+
+  <export>
+    <pr2_controller_interface plugin="${prefix}/controller_plugins.xml" />
+  </export>
+
+</package>
+
+

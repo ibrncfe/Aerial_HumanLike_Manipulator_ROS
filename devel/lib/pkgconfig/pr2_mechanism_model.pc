@@ -1,0 +1,8 @@
+prefix=/home/ibrncfe/manipulator_ws/devel
+
+Name: pr2_mechanism_model
+Description: Description of pr2_mechanism_model
+Version: 1.8.18
+Cflags: -I/home/ibrncfe/manipulator_ws/src/pr2_mechanism/pr2_mechanism_model/include -I/usr/include
+Libs: -L/home/ibrncfe/manipulator_ws/devel/lib -lpr2_mechanism_model /usr/lib/x86_64-linux-gnu/libtinyxml.so /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so /usr/lib/x86_64-linux-gnu/liburdfdom_model.so /usr/lib/x86_64-linux-gnu/liburdfdom_world.so /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+Requires: roscpp pr2_hardware_interface urdf kdl_parser pluginlib angles hardware_interface

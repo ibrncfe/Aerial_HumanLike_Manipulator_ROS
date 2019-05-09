@@ -1,2 +1,2 @@
-aeriaman:man_gazebo:ros_control
+aeriaman:man_gazebo:pr2_mechanism/pr2_controller_interface:pr2_mechanism/pr2_controller_manager:pr2_mechanism/pr2_hardware_interface:pr2_mechanism/pr2_mechanism:pr2_mechanism/pr2_mechanism_diagnostics:pr2_mechanism/pr2_mechanism_model:pr2_mechanism/pr2_mechanism_msgs:ros_control
 -DCATKIN_DEVEL_PREFIX=/home/ibrncfe/manipulator_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ibrncfe/manipulator_ws/install -G Unix Makefiles

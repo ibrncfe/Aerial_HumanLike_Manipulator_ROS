@@ -1,0 +1,8 @@
+prefix=/home/ibrncfe/manipulator_ws/install
+
+Name: pr2_controller_interface
+Description: Description of pr2_controller_interface
+Version: 1.8.18
+Cflags: -I/home/ibrncfe/manipulator_ws/install/include
+Libs: -L/home/ibrncfe/manipulator_ws/install/lib 
+Requires: roscpp pr2_mechanism_model controller_interface

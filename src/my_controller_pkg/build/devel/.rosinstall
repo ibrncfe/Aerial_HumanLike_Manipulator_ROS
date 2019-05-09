@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ibrncfe/manipulator_ws/src/my_controller_pkg/build/devel/setup.sh

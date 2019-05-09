@@ -1,0 +1,2 @@
+set(pr2_mechanism_msgs_MESSAGE_FILES "msg/SwitchControllerAction.msg;msg/SwitchControllerActionGoal.msg;msg/SwitchControllerActionResult.msg;msg/SwitchControllerActionFeedback.msg;msg/SwitchControllerGoal.msg;msg/SwitchControllerResult.msg;msg/SwitchControllerFeedback.msg;msg/ActuatorStatistics.msg;msg/ControllerStatistics.msg;msg/JointStatistics.msg;msg/MechanismStatistics.msg")
+set(pr2_mechanism_msgs_SERVICE_FILES "srv/ListControllers.srv;srv/LoadController.srv;srv/SwitchController.srv;srv/ListControllerTypes.srv;srv/ReloadControllerLibraries.srv;srv/UnloadController.srv")

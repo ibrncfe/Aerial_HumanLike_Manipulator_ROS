@@ -30,9 +30,9 @@
 
 <!-- Base Link --> 
 <link name="base_link"> 
-<visual> <origin xyz="0 0 0.1" rpy="0 0 0" /> <geometry> <box size= "2 2 0.2" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
-<collision> <origin xyz="0 0 0.1" rpy="0 0 0" /> <geometry> <box size= "2 2 0.2" /> </geometry> </collision> 
-<inertial> <origin xyz="0 0 0.1" rpy="0 0 0" /> <mass value="${mass1}" /> <inertia ixx="${mass1 / 12.0 * (2*2 + 0.2*0.2)}" ixy="0.0" ixz="0.0"
+<visual> <origin xyz="0 0 2" rpy="0 0 0" /> <geometry> <box size= "2 2 0.2" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 2" rpy="0 0 0" /> <geometry> <box size= "2 2 0.2" /> </geometry> </collision> 
+<inertial> <origin xyz="0 0 2" rpy="0 0 0" /> <mass value="${mass1}" /> <inertia ixx="${mass1 / 12.0 * (2*2 + 0.2*0.2)}" ixy="0.0" ixz="0.0"
 iyy="${mass1 / 12.0 * (0.2*0.2 + 2*2)}" iyz="0.0"
 izz="${mass1 / 12.0 * (2*2 + 2*2)}"/> </inertial> 
 
@@ -42,15 +42,16 @@ izz="${mass1 / 12.0 * (2*2 + 2*2)}"/> </inertial>
 <!-- Joint --> 
 <joint name="jf" type="fixed"> 
 <parent link="base_link" /> <child link="sh_link" />
-<origin xyz="0 ${width} 0.2" rpy="0 0 0" /> 
+<origin xyz="0 ${width} -0.1" rpy="0 0 0" /> 
 <axis xyz="0 0 0" /> <dynamics damping="${damp}" />
 <limit effort="0" velocity="0" lower="0" upper="0" /> </joint>
-<!-- done== origin from the last link size-->
+
+<!-- done== origin from the last link size l1zorigin-l1zsize+l2zsize/2-->
 <!-- Link --> 
 <link name="sh_link"> 
-<visual> <origin xyz="0 0 0.05" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.1" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
-<collision> <origin xyz="0 0 0.05" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.1" /> </geometry> </collision> 
-<inertial> <origin xyz="0 0 0.05" rpy="0 0 0" /> <mass value="${mass2}" /> 
+<visual> <origin xyz="0 0 1.95" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.1" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 1.95" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.1" /> </geometry> </collision> 
+<inertial> <origin xyz="0 0 1.95" rpy="0 0 0" /> <mass value="${mass2}" /> 
 <inertia ixx="${mass2 / 12.0 * (0.1*0.1 + 0.1*0.1)}" ixy="0.0" ixz="0.0"
 iyy="${mass2 / 12.0 * (0.1*0.1 + 0.1*0.1)}" iyz="0.0"
 izz="${mass2 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial> 
@@ -59,56 +60,109 @@ izz="${mass2 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial>
 <!-- Joint --> 
 <joint name="j1" type="revolute"> 
 <parent link="sh_link" /> <child link="arm_shlink" />
-<origin xyz="0 0 0.1" rpy="0 0 0" />
+<origin xyz="0 0 1.9" rpy="0 0 0" />
 <axis xyz="0 1 0"/> <dynamics damping="${damp}" />
 <limit effort="1000.0" velocity="0.5" lower="-1.5" upper="1.5" /> 
 </joint>
 
 <!-- Link --> 
 <link name="arm_shlink"> 
-<visual> <origin xyz="0 0 0.1" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.2" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
-<collision> <origin xyz="0 0 0.1" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.2" /> </geometry> </collision> 
-<inertial> <origin xyz="0 0 0.1" rpy="0 0 0" /> <mass value="${mass3}" /> <inertia
+<visual> <origin xyz="0 0 -0.1" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.2" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 -0.1" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.2" /> </geometry> </collision> 
+<inertial> <origin xyz="0 0 -0.1" rpy="0 0 0" /> <mass value="${mass3}" /> <inertia
 ixx="${mass3 / 12.0 * (0.1*0.1 + 0.2*0.2)}" ixy="0.0" ixz="0.0"
 iyy="${mass3 / 12.0 * (0.2*0.2 + 0.1*0.1)}" iyz="0.0"
 izz="${mass3 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial> 
 </link>
 <!-- done link== origin from the center of gravity-->
+
 <!-- Joint --> 
 <joint name="j2" type="revolute"> 
 <parent link="arm_shlink" /> <child link="forearm_link" />
-<origin xyz="0 0 0.2" rpy="0 0 0" /> 
+<origin xyz="0 0 -0.2" rpy="0 0 0" /> 
 <axis xyz="1 0 0" /> <dynamics damping="${damp}" />
 <limit effort="1000.0" velocity="0.5" lower="-1.5" upper="1.5" /> </joint>
 <!-- done joint== origin from the last link's size-->
 <!-- Link --> 
 <link name="forearm_link"> 
-<visual> <origin xyz="0 0 0.5" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 1" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
-<collision> <origin xyz="0 0 0.5" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 1" /> </geometry> </collision> 
-<inertial> <origin xyz="0 0 0.5" rpy="0 0 0" /> <mass value="${mass4}" /> <inertia
+<visual> <origin xyz="0 0 -0.5" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 1" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 -0.5" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 1" /> </geometry> </collision> 
+<inertial> <origin xyz="0 0 -0.5" rpy="0 0 0" /> <mass value="${mass4}" /> <inertia
 ixx="${mass4 / 12.0 * (0.1*0.1 + 1)}" ixy="0.0" ixz="0.0"
 iyy="${mass4 / 12.0 * (1 + 0.1*0.1)}" iyz="0.0"
 izz="${mass4 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial> 
 </link>
 
-
 <!-- done link== origin from the center of gravity-->
 <!-- Joint --> 
 <joint name="j3" type="revolute">
 <parent link="forearm_link" /> <child link="arm_link" />
-<origin xyz="0 0 1" rpy="0 0 0" />
+<origin xyz="0 0 -1" rpy="0 0 0" />
 <axis xyz="1 0 0" /> <dynamics damping="${damp}" />
 <limit effort="1000.0" velocity="0.5" lower="-1.5" upper="1.5" /> </joint>
 <!-- done joint== origin from the last link's size-->
 <!-- Link -->
 <link name="arm_link">
-<visual> <origin xyz="0 0 0.4" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.8" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
-<collision> <origin xyz="0 0 0.4" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.8" /> </geometry> </collision>
-<inertial> <origin xyz="0 0 0.4" rpy="0 0 0" /> <mass value="${mass5}" /> <inertia ixx="${mass5 / 12.0 * (0.1*0.1 + 0.8*0.8)}" ixy="0.0" ixz="0.0"
+<visual> <origin xyz="0 0 -0.4" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.8" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 -0.4" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.8" /> </geometry> </collision>
+<inertial> <origin xyz="0 0 -0.4" rpy="0 0 0" /> <mass value="${mass5}" /> <inertia ixx="${mass5 / 12.0 * (0.1*0.1 + 0.8*0.8)}" ixy="0.0" ixz="0.0"
 iyy="${mass5 / 12.0 * (0.8*0.8 + 0.1*0.1)}" iyz="0.0"
 izz="${mass5 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial> 
 </link>
 
+
+<!-- done link== origin from the center of gravity-->
+<!-- Joint --> 
+<joint name="j4" type="revolute">
+<parent link="arm_link" /> <child link="hand_1_link" />
+<origin xyz="0 0 -0.8" rpy="0 0 0" />
+<axis xyz="0 0 1" /> <dynamics damping="${damp}" />
+<limit effort="1000.0" velocity="0.5" lower="-1.5" upper="1.5" /> </joint>
+<!-- done joint== origin from the last link's size-->
+<!-- Link -->
+<link name="hand_1_link">
+<visual> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.1" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.8" /> </geometry> </collision>
+<inertial> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <mass value="${mass5}" /> <inertia ixx="${mass5 / 12.0 * (0.1*0.1 + 0.8*0.8)}" ixy="0.0" ixz="0.0"
+iyy="${mass5 / 12.0 * (0.8*0.8 + 0.1*0.1)}" iyz="0.0"
+izz="${mass5 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial> 
+</link>
+
+
+<!-- done link== origin from the center of gravity-->
+<!-- Joint --> 
+<joint name="j5" type="revolute">
+<parent link="hand_1_link" /> <child link="hand_2_link" />
+<origin xyz="0 0 -0.1" rpy="0 0 0" />
+<axis xyz="1 0 0" /> <dynamics damping="${damp}" />
+<limit effort="1000.0" velocity="0.5" lower="-1.5" upper="1.5" /> </joint>
+<!-- done joint== origin from the last link's size-->
+<!-- Link -->
+<link name="hand_2_link">
+<visual> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.1" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.8" /> </geometry> </collision>
+<inertial> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <mass value="${mass5}" /> <inertia ixx="${mass5 / 12.0 * (0.1*0.1 + 0.8*0.8)}" ixy="0.0" ixz="0.0"
+iyy="${mass5 / 12.0 * (0.8*0.8 + 0.1*0.1)}" iyz="0.0"
+izz="${mass5 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial> 
+</link>
+
+
+<!-- done link== origin from the center of gravity-->
+<!-- Joint --> 
+<joint name="j6" type="revolute">
+<parent link="hand_2_link" /> <child link="hand_3_link" />
+<origin xyz="0 0 -0.1" rpy="0 0 0" />
+<axis xyz="0 1 0" /> <dynamics damping="${damp}" />
+<limit effort="1000.0" velocity="0.5" lower="-1.5" upper="1.5" /> </joint>
+<!-- done joint== origin from the last link's size-->
+<!-- Link -->
+<link name="hand_3_link">
+<visual> <origin xyz="0 0 -0.2" rpy="0 0 0" /> <geometry> <box size= "0.4 0.1 0.4" /> <material name="blue"> <color rgba="0 0 .8 1"/> </material></geometry> </visual> 
+<collision> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <geometry> <box size= "0.1 0.1 0.8" /> </geometry> </collision>
+<inertial> <origin xyz="0 0 -0.05" rpy="0 0 0" /> <mass value="${mass5}" /> <inertia ixx="${mass5 / 12.0 * (0.1*0.1 + 0.8*0.8)}" ixy="0.0" ixz="0.0"
+iyy="${mass5 / 12.0 * (0.8*0.8 + 0.1*0.1)}" iyz="0.0"
+izz="${mass5 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial> 
+</link>
 
 <transmission name="t1">
     <type>transmission_interface/SimpleTransmission</type>
@@ -142,5 +196,6 @@ izz="${mass5 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
 </transmission>
+
 
 </robot>
