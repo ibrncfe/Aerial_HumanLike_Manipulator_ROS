@@ -5,7 +5,7 @@
 
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" ns="/manipulator" args="j1_position_controller j2_position_controller j3_position_controller joint_state_controller"/>
+    output="screen" ns="/manipulator" args="j1_position_controller j2_position_controller j3_position_controller j4_position_controller j5_position_controller j6_position_controller joint_state_controller"/>
 
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"

@@ -424,7 +424,7 @@ joint_state_controller_DIR:PATH=/opt/ros/melodic/share/joint_state_controller/cm
 kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/librospack.so
+lib:FILEPATH=/opt/ros/melodic/lib/librosconsole_bridge.so
 
 //Value Computed by CMake
 man_controller_BINARY_DIR:STATIC=/home/ibrncfe/manipulator_ws/build/man_controller
@@ -716,7 +716,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=13
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -197,5 +197,37 @@ izz="${mass5 / 12.0 * (0.1*0.1 + 0.1*0.1)}"/> </inertial>
     </actuator>
 </transmission>
 
+<transmission name="t4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="t5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="t6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
 
 </robot>
